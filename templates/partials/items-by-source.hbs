@@ -1,0 +1,15 @@
+<fieldset class="package-{{id}}-{{type}}" data-type="{{type}}">
+    <legend>{{title}}</legend>
+    <div class="all-selector">
+        <div class="form-group">
+            <input type="checkbox" id="package-{{id}}-{{type}}" class="package-checkbox" data-package-id="{{id}}" {{checked (eq allChecked 'all')}} />
+            <label for="package-{{id}}-{{type}}">All</label>
+        </div>
+    </div>
+    {{#each items}}
+    <div class="form-group">
+        <input type="checkbox" id="item-{{uuid}}" class="item-checkbox" data-uuid="{{uuid}}" {{checked (SWADEItemTables_Includes ../includedItemUuids uuid) }} />
+        <label for="item-{{uuid}}" data-uuid="{{uuid}}">{{name}}</label>
+    </div>
+    {{/each}}
+</fieldset>

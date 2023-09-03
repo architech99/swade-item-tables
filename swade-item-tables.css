@@ -1,0 +1,31 @@
+.swade-item-tables {
+    .all-selector {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .all-selector label {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .table-notes,
+    .table-notes * {
+        font-family: unset;
+        font-size: 0.8rem !important;
+    }
+
+    & table {
+        & > caption {
+            padding: 0.25em;
+            font-size: 1.25em;
+            color: #fff;
+            background-color: #000;
+        }
+    }
+}

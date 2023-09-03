@@ -1,0 +1,51 @@
+{
+  "id": "swade-item-tables",
+  "title": "SWADE Item Tables",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "swade",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "Kristian Serrano",
+      "discord": "KristianSerrano",
+      "url": "https://immaterialplane.com",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "modules/swade-item-tables.js"
+  ],
+  "styles": [
+    "swade-item-tables.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "json"
+      ],
+      "paths": [
+        "swade-item-tables.css",
+        "lang/en.json"
+      ]
+    }
+  }
+}

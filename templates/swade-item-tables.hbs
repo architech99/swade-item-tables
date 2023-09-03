@@ -1,0 +1,201 @@
+<form>
+    <h2>{{localize 'SWADEItemTables.Title'}}</h2>
+    {{> 'modules/swade-item-tables/templates/partials/tabs.hbs'}}
+    <main class="sheet-body">
+        <section class="tab" data-group="category-tabs" data-tab="ancestries">
+            <table>
+                <caption>Ancestries</caption>
+                <thead>
+                    <tr>
+                        <th>Ancestry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each ancestries}}
+                    {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='ancestries'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab" data-group="category-tabs" data-tab="hindrances">
+            <table>
+                <caption>Hindrances</caption>
+                <thead>
+                    <tr>
+                        <th>Hindrance</th>
+                        <th>Major/Minor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each hindrances}}
+                    {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='hindrances'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab" data-group="category-tabs" data-tab="skills">
+            <table>
+                <caption>Skills</caption>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Linked Attribute</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each skills}}
+                    {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='skills'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab" data-group="category-tabs" data-tab="edges">
+            <table>
+                <caption>Edges</caption>
+                <thead>
+                    <tr>
+                        <th>Edge</th>
+                        <th>Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each edges}}
+                    {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='edges'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab subsection --equipment" data-group="category-tabs" data-tab="equipment">
+            {{> 'modules/swade-item-tables/templates/partials/subtabs.hbs'}}
+            <section class="tab" data-group="subcategory-tabs" data-tab="gear">
+                <table>
+                    <caption>Gear</caption>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Weight</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each gear}}
+                        {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='gear'}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </section>
+            <section class="tab" data-group="subcategory-tabs" data-tab="armor">
+                <table>
+                    <caption>Armor</caption>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Armor</th>
+                            <th>Min Str.</th>
+                            <th>Weight</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each armor}}
+                        {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='armor'}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </section>
+            <section class="tab" data-group="subcategory-tabs" data-tab="shields">
+                <table>
+                    <caption>Shields</caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Parry</th>
+                            <th>Min Str.</th>
+                            <th>Weight</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each shields}}
+                        {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='shields'}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </section>
+            <section class="tab" data-group="subcategory-tabs" data-tab="melee-weapons">
+                <table>
+                    <caption>Melee Weapons</caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Damage</th>
+                            <th>Min Str.</th>
+                            <th>Weight</th>
+                            <th>Cost</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each melee-weapons}}
+                        {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='melee-weapons'}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </section>
+            <section class="tab" data-group="subcategory-tabs" data-tab="ranged-weapons">
+                <table>
+                    <caption>Ranged Weapons</caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Range</th>
+                            <th>Damage</th>
+                            <th>AP</th>
+                            <th>RoF</th>
+                            <th>Min Str.</th>
+                            <th>Weight</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each ranged-weapons}}
+                        {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='ranged-weapons'}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section class="tab" data-group="category-tabs" data-tab="powers">
+            <table>
+                <caption>Powers</caption>
+                <thead>
+                    <tr>
+                        <th>Power</th>
+                        <th>Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each powers}}
+                    {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='powers'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab" data-group="category-tabs" data-tab="abilities">
+            <table>
+                <caption>Abilities</caption>
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each abilities}}
+                    {{> 'modules/swade-item-tables/templates/partials/allowed-items-by-source.hbs' type='abilities'}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</form>

@@ -1,0 +1,18 @@
+{
+    "SWADEItemTables": {
+        "Title": "SWADE Item Tables",
+        "ItemsSelector": "Allowed Items Configuration",
+        "ItemsList": {
+            "Name": "Items to Allow",
+            "Label": "Select Items",
+            "Hint": "Select which Items you want to use in your campaign."
+        },
+        "HideSystem":{
+            "Name": "Hide System Items",
+            "Hint": "Hides Items for the SWADE System Compendia"
+        },
+        "App": {
+
+        }
+    }
+}

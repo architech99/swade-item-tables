@@ -1,0 +1,210 @@
+{{!-- Ancestries --}}
+{{#if (eq type 'ancestries')}}
+<tr>
+    <th colspan="1">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+</tr>
+{{/each}}
+{{/if}}
+
+{{!-- Hindrances --}}
+
+{{#if (eq type 'hindrances')}}
+<tr>
+    <th colspan="2">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>
+        {{#if (SWADEItemTables_Includes system.description 'Major')}}
+        Minor/Major
+        {{else}}
+        {{#if system.major}}
+        Major
+        {{else}}
+        Minor
+        {{/if}}
+        {{/if}}
+    </td>
+</tr>
+{{/each}}
+{{/if}}
+
+{{!-- Skills --}}
+
+{{#if (eq type 'skills')}}
+<tr>
+    <th colspan="2">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>
+        {{#if system.attribute}}
+        {{SWADEItemTables_AttributeString system.attribute}}
+        {{/if}}
+    </td>
+</tr>
+{{/each}}
+{{/if}}
+
+
+{{!-- Edges --}}
+
+{{#if (eq type 'edges')}}
+<tr>
+    <th colspan="2">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>
+        {{#if system.requirements.value}}
+        {{system.requirements.value}}
+        {{/if}}
+    </td>
+</tr>
+{{/each}}
+{{/if}}
+
+{{!-- Equipment --}}
+
+{{!-- Gear --}}
+{{#if (eq type 'gear')}}
+<tr>
+    <th colspan="3">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{system.weight}}</td>
+    <td>{{system.price}}</td>
+{{#if system.notes}}
+</tr>
+<tr>
+    <td colspan="3" class="table-notes">{{{system.notes}}}</td>
+</tr>
+{{else}}
+</tr>
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{!-- Armor --}}
+{{#if (eq type 'armor')}}
+<tr>
+    <th colspan="5">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{system.armor}}</td>
+    <td>{{system.minStr}}</td>
+    <td>{{system.weight}}</td>
+    <td>{{system.price}}</td>
+    {{#if system.notes}}
+</tr>
+<tr>
+    <td colspan="5" class="table-notes">{{{system.notes}}}</td>
+</tr>
+{{else}}
+</tr>
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{!-- Shields --}}
+{{#if (eq type 'shields')}}
+<tr>
+    <th colspan="5">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{system.parry}}</td>
+    <td>{{system.minStr}}</td>
+    <td>{{system.weight}}</td>
+    <td>{{system.price}}</td>
+    {{#if system.notes}}
+</tr>
+<tr>
+    <td colspan="5" class="table-notes">{{{system.notes}}}</td>
+</tr>
+{{else}}
+</tr>
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{!-- Melee Weapons --}}
+{{#if (eq type 'melee-weapons')}}
+<tr>
+    <th colspan="6">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{SWADEItemTables_FormatStr system.damage}}</td>
+    <td>{{system.minStr}}</td>
+    <td>{{system.weight}}</td>
+    <td>{{system.price}}</td>
+    <td class="table-notes">{{{system.notes}}}</td>
+</tr>
+{{/each}}
+{{/if}}
+
+{{!-- Ranged Weapons --}}
+{{#if (eq type 'ranged-weapons')}}
+<tr>
+    <th colspan="9">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{system.range}}</td>
+    <td>{{SWADEItemTables_FormatStr system.damage}}</td>
+    <td>{{system.ap}}</td>
+    <td>{{system.rof}}</td>
+    <td>{{system.minStr}}</td>
+    <td>{{system.weight}}</td>
+    <td>{{system.price}}</td>
+{{#if system.notes}}
+</tr>
+<tr>
+    <td colspan="9" class="table-notes">{{{system.notes}}}</td>
+</tr>
+{{else}}
+</tr>
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{!-- Powers --}}
+{{#if (eq type 'powers')}}
+<tr>
+    <th colspan="2">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{system.rank}}</td>
+</tr>
+{{/each}}
+{{/if}}
+
+{{!-- Abilities --}}
+{{#if (eq type 'abilities')}}
+<tr>
+    <th colspan="2">{{title}}</th>
+</tr>
+{{#each items}}
+<tr>
+    <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
+    <td>{{system.category}}</td>
+</tr>
+{{/each}}
+{{/if}}
