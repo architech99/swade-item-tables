@@ -1,11 +1,17 @@
 <fieldset class="package-{{id}}-{{type}}" data-type="{{type}}">
-    <legend>{{title}}</legend>
-    <div class="all-selector">
-        <div class="form-group">
-            <input type="checkbox" id="package-{{id}}-{{type}}" class="package-checkbox" data-package-id="{{id}}" {{checked (eq allChecked 'all')}} />
-            <label for="package-{{id}}-{{type}}">All</label>
+    <legend>
+        <div class="all-selector">
+            <div class="form-group">
+                <input type="checkbox" id="package-{{id}}-{{type}}" class="package-checkbox" data-package-id="{{id}}" {{checked (eq allChecked 'all' )}} />
+                <label for="package-{{id}}-{{type}}">
+                    {{#if (eq packageType 'system')}}<i class="far fa-dice" data-tooltip="{{localize 'PACKAGE.Type.system'}}"></i>{{/if}}
+                    {{#if (eq packageType 'module')}}<i class="fas fa-cube" data-tooltip="{{localize 'PACKAGE.Type.module'}}"></i>{{/if}}
+                    {{#if (eq packageType 'world')}}<i class="fas fa-globe" data-tooltip="{{localize 'PACKAGE.Type.world'}}"></i>{{/if}}
+                    {{title}}
+                </label>
+            </div>
         </div>
-    </div>
+    </legend>
     {{#each items}}
     <div class="form-group">
         <input type="checkbox" id="item-{{uuid}}" class="item-checkbox" data-uuid="{{uuid}}" {{checked (SWADEItemTables_Includes ../includedItemUuids uuid) }} />

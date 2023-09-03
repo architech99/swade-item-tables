@@ -4,10 +4,10 @@
     <main class="sheet-body">
         <section class="tab" data-group="category-tabs" data-tab="ancestries">
             <table>
-                <caption>Ancestries</caption>
+                <caption>{{localize 'SWADEItemTables.Ancestries'}}</caption>
                 <thead>
                     <tr>
-                        <th>Ancestry</th>
+                        <th>{{localize 'SWADEItemTables.Ancestry'}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,11 +19,11 @@
         </section>
         <section class="tab" data-group="category-tabs" data-tab="hindrances">
             <table>
-                <caption>Hindrances</caption>
+                <caption>{{localize 'SWADE.Hindrances'}}</caption>
                 <thead>
                     <tr>
-                        <th>Hindrance</th>
-                        <th>Major/Minor</th>
+                        <th>{{localize 'SWADEItemTables.Hindrance'}}</th>
+                        <th>{{localize 'SWADEItemTables.Major'}}/{{localize 'SWADEItemTables.Minor'}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,11 +35,11 @@
         </section>
         <section class="tab" data-group="category-tabs" data-tab="skills">
             <table>
-                <caption>Skills</caption>
+                <caption>{{localize 'SWADE.Skills'}}</caption>
                 <thead>
                     <tr>
-                        <th>Skill</th>
-                        <th>Linked Attribute</th>
+                        <th>{{localize 'SWADEItemTables.Skill'}}</th>
+                        <th>{{localize 'SWADEItemTables.LinkedAttribute'}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,11 +51,11 @@
         </section>
         <section class="tab" data-group="category-tabs" data-tab="edges">
             <table>
-                <caption>Edges</caption>
+                <caption>{{localize 'SWADE.Edges'}}</caption>
                 <thead>
                     <tr>
-                        <th>Edge</th>
-                        <th>Rank</th>
+                        <th>{{localize 'SWADEItemTables.Edge'}}</th>
+                        <th>{{localize 'SWADE.Rank'}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,12 +69,12 @@
             {{> 'modules/swade-item-tables/templates/partials/subtabs.hbs'}}
             <section class="tab" data-group="subcategory-tabs" data-tab="gear">
                 <table>
-                    <caption>Gear</caption>
+                    <caption>{{localize 'SWADEItemTables.Gear'}}</caption>
                     <thead>
                         <tr>
-                            <th>Item</th>
-                            <th>Weight</th>
-                            <th>Cost</th>
+                            <th>{{localize 'SWADE.Item'}}</th>
+                            <th>{{localize 'SWADE.Weight'}}</th>
+                            <th>{{localize 'SWADE.Price'}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,14 +86,14 @@
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="armor">
                 <table>
-                    <caption>Armor</caption>
+                    <caption>{{localize 'SWADE.Armor'}}</caption>
                     <thead>
                         <tr>
-                            <th>Item</th>
-                            <th>Armor</th>
-                            <th>Min Str.</th>
-                            <th>Weight</th>
-                            <th>Cost</th>
+                            <th>{{localize 'SWADE.Item'}}</th>
+                            <th>{{localize 'SWADE.Armor'}}</th>
+                            <th>{{localize 'SWADEItemTables.MinStr'}}</th>
+                            <th>{{localize 'SWADE.Weight'}}</th>
+                            <th>{{localize 'SWADE.Price'}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -105,14 +105,14 @@
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="shields">
                 <table>
-                    <caption>Shields</caption>
+                    <caption>{{localize 'SWADE.Shields'}}</caption>
                     <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>Parry</th>
-                            <th>Min Str.</th>
-                            <th>Weight</th>
-                            <th>Cost</th>
+                            <th>{{localize 'SWADEItemTables.Type'}}</th>
+                            <th>{{localize 'SWADE.Parry'}}</th>
+                            <th>{{localize 'SWADEItemTables.MinStr'}}</th>
+                            <th>{{localize 'SWADE.Weight'}}</th>
+                            <th>{{localize 'SWADE.Price'}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -124,15 +124,15 @@
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="melee-weapons">
                 <table>
-                    <caption>Melee Weapons</caption>
+                    <caption>{{localize 'SWADE.MeleeWeapons'}}</caption>
                     <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>Damage</th>
-                            <th>Min Str.</th>
-                            <th>Weight</th>
-                            <th>Cost</th>
-                            <th>Notes</th>
+                            <th>{{localize 'SWADEItemTables.Type'}}</th>
+                            <th>{{localize 'SWADEItemTables.Damage'}}</th>
+                            <th>{{localize 'SWADEItemTables.MinStr'}}</th>
+                            <th>{{localize 'SWADE.Weight'}}</th>
+                            <th>{{localize 'SWADE.Price'}}</th>
+                            <th>{{localize 'SWADE.Notes'}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -144,17 +144,17 @@
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="ranged-weapons">
                 <table>
-                    <caption>Ranged Weapons</caption>
+                    <caption>{{localize 'SWADE.RangedWeapons'}}</caption>
                     <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>Range</th>
-                            <th>Damage</th>
-                            <th>AP</th>
-                            <th>RoF</th>
-                            <th>Min Str.</th>
-                            <th>Weight</th>
-                            <th>Cost</th>
+                            <th>{{localize 'SWADEItemTables.Type'}}</th>
+                            <th>{{localize 'SWADEItemTables.Range'}}</th>
+                            <th>{{localize 'SWADEItemTables.Damage'}}</th>
+                            <th>{{localize 'SWADEItemTables.AP'}}</th>
+                            <th>{{localize 'SWADE.RoF'}}</th>
+                            <th>{{localize 'SWADEItemTables.MinStr'}}</th>
+                            <th>{{localize 'SWADE.Weight'}}</th>
+                            <th>{{localize 'SWADE.Price'}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -167,11 +167,11 @@
         </section>
         <section class="tab" data-group="category-tabs" data-tab="powers">
             <table>
-                <caption>Powers</caption>
+                <caption>{{localize 'SWADE.Powers'}}</caption>
                 <thead>
                     <tr>
-                        <th>Power</th>
-                        <th>Rank</th>
+                        <th>{{localize 'SWADE.Power'}}</th>
+                        <th>{{localize 'SWADE.Rank'}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -183,11 +183,11 @@
         </section>
         <section class="tab" data-group="category-tabs" data-tab="abilities">
             <table>
-                <caption>Abilities</caption>
+                <caption>{{localize 'SWADE.Abilities'}}</caption>
                 <thead>
                     <tr>
-                        <th>Ability</th>
-                        <th>Category</th>
+                        <th>{{localize 'SWADEItemTables.Ability'}}</th>
+                        <th>{{localize 'SWADE.Category'}}</th>
                     </tr>
                 </thead>
                 <tbody>

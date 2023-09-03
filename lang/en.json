@@ -11,8 +11,26 @@
             "Name": "Hide System Items",
             "Hint": "Hides Items for the SWADE System Compendia"
         },
-        "App": {
-
-        }
+        "AllowedItemsConfiguration": {
+            "Pretext": "Right-click on an Item's name to open its sheet."
+        },
+        "Ability": "Ability",
+        "Abilities": "Abilities",
+        "Ancestry": "Ancestry",
+        "Ancestries": "Ancestries",
+        "AP": "AP",
+        "Damage": "Damage",
+        "Edge": "Edge",
+        "Equipment": "Equipment",
+        "Gear": "Gear",
+        "Hindrance": "Hindrance",
+        "Major": "Major",
+        "Minor": "Minor",
+        "MinStr": "Min Str.",
+        "LinkedAttribute": "Linked Attribute",
+        "Powers": "Powers",
+        "Range": "Range",
+        "Skill": "Skill",
+        "Type": "Type"
     }
 }

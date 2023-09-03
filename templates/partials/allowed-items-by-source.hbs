@@ -1,8 +1,6 @@
 {{!-- Ancestries --}}
 {{#if (eq type 'ancestries')}}
-<tr>
-    <th colspan="1">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='1'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
@@ -13,20 +11,18 @@
 {{!-- Hindrances --}}
 
 {{#if (eq type 'hindrances')}}
-<tr>
-    <th colspan="2">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='2'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
     <td>
-        {{#if (SWADEItemTables_Includes system.description 'Major')}}
-        Minor/Major
+        {{#if (SWADEItemTables_Includes system.description (localize 'SWADEItemTables.Major'))}}
+        {{localize 'SWADEItemTables.Minor'}}/{{localize 'SWADEItemTables.Major'}}
         {{else}}
         {{#if system.major}}
-        Major
+        {{localize 'SWADEItemTables.Major'}}
         {{else}}
-        Minor
+        {{localize 'SWADEItemTables.Minor'}}
         {{/if}}
         {{/if}}
     </td>
@@ -37,9 +33,7 @@
 {{!-- Skills --}}
 
 {{#if (eq type 'skills')}}
-<tr>
-    <th colspan="2">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='2'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
@@ -56,9 +50,7 @@
 {{!-- Edges --}}
 
 {{#if (eq type 'edges')}}
-<tr>
-    <th colspan="2">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='2'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
@@ -75,93 +67,77 @@
 
 {{!-- Gear --}}
 {{#if (eq type 'gear')}}
-<tr>
-    <th colspan="3">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='3'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
-    <td>{{system.weight}}</td>
-    <td>{{system.price}}</td>
-{{#if system.notes}}
+    <td>{{SWADEItemTables_LocalizeNumber system.weight}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.price}}</td>
+    {{#if system.notes}}
 </tr>
 <tr>
     <td colspan="3" class="table-notes">{{{system.notes}}}</td>
-</tr>
-{{else}}
-</tr>
 {{/if}}
+</tr>
 {{/each}}
 {{/if}}
 
 {{!-- Armor --}}
 {{#if (eq type 'armor')}}
-<tr>
-    <th colspan="5">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='5'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
     <td>{{system.armor}}</td>
     <td>{{system.minStr}}</td>
-    <td>{{system.weight}}</td>
-    <td>{{system.price}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.weight}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.price}}</td>
     {{#if system.notes}}
 </tr>
 <tr>
     <td colspan="5" class="table-notes">{{{system.notes}}}</td>
-</tr>
-{{else}}
-</tr>
 {{/if}}
+</tr>
 {{/each}}
 {{/if}}
 
 {{!-- Shields --}}
 {{#if (eq type 'shields')}}
-<tr>
-    <th colspan="5">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='5'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
     <td>{{system.parry}}</td>
     <td>{{system.minStr}}</td>
-    <td>{{system.weight}}</td>
-    <td>{{system.price}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.weight}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.price}}</td>
     {{#if system.notes}}
 </tr>
 <tr>
-    <td colspan="5" class="table-notes">{{{system.notes}}}</td>
-</tr>
-{{else}}
-</tr>
+    <td colspan="5" class="notes table-notes">{{{system.notes}}}</td>
 {{/if}}
+</tr>
 {{/each}}
 {{/if}}
 
 {{!-- Melee Weapons --}}
 {{#if (eq type 'melee-weapons')}}
-<tr>
-    <th colspan="6">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='6'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
     <td>{{SWADEItemTables_FormatStr system.damage}}</td>
     <td>{{system.minStr}}</td>
-    <td>{{system.weight}}</td>
-    <td>{{system.price}}</td>
-    <td class="table-notes">{{{system.notes}}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.weight}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.price}}</td>
+    <td class="notes table-notes">{{{system.notes}}}</td>
 </tr>
 {{/each}}
 {{/if}}
 
 {{!-- Ranged Weapons --}}
 {{#if (eq type 'ranged-weapons')}}
-<tr>
-    <th colspan="9">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='9'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
@@ -170,24 +146,20 @@
     <td>{{system.ap}}</td>
     <td>{{system.rof}}</td>
     <td>{{system.minStr}}</td>
-    <td>{{system.weight}}</td>
-    <td>{{system.price}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.weight}}</td>
+    <td>{{SWADEItemTables_LocalizeNumber system.price}}</td>
 {{#if system.notes}}
 </tr>
 <tr>
-    <td colspan="9" class="table-notes">{{{system.notes}}}</td>
-</tr>
-{{else}}
-</tr>
+    <td colspan="9" class="notes table-notes">{{{system.notes}}}</td>
 {{/if}}
+</tr>
 {{/each}}
 {{/if}}
 
 {{!-- Powers --}}
 {{#if (eq type 'powers')}}
-<tr>
-    <th colspan="2">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='2'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>
@@ -198,9 +170,7 @@
 
 {{!-- Abilities --}}
 {{#if (eq type 'abilities')}}
-<tr>
-    <th colspan="2">{{title}}</th>
-</tr>
+{{> 'modules/swade-item-tables/templates/partials/table-subheading.hbs' packageType=packageType colspan='2'}}
 {{#each items}}
 <tr>
     <td><a data-uuid="{{uuid}}" draggable="true">{{name}}</a></td>

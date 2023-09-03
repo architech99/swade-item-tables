@@ -1,72 +1,72 @@
 <form>
     {{> 'modules/swade-item-tables/templates/partials/tabs.hbs'}}
     <main class="sheet-body">
-        <p>Right-click an Item to see its details.</p>
+        <p class="pretext"></p>
         <section class="tab" data-group="category-tabs" data-tab="ancestries">
-            <h3>Ancestries</h3>
+            <h3>{{localize 'SWADEItemTables.Ancestries'}}</h3>
             {{#each ancestries}}
             {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='ancestries'}}
             {{/each}}
         </section>
         <section class="tab" data-group="category-tabs" data-tab="hindrances">
-            <h3>Hindrances</h3>
+            <h3>{{localize 'SWADE.Hindrances'}}</h3>
             {{#each hindrances}}
             {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='hindrances'}}
             {{/each}}
         </section>
         <section class="tab" data-group="category-tabs" data-tab="skills">
-            <h3>Skills</h3>
+            <h3>{{localize 'SWADE.Skills'}}</h3>
             {{#each skills}}
             {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='skills'}}
             {{/each}}
         </section>
         <section class="tab" data-group="category-tabs" data-tab="edges">
-            <h3>Edges</h3>
+            <h3>{{localize 'SWADE.Edges'}}</h3>
             {{#each edges}}
             {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='edges'}}
             {{/each}}
         </section>
         <section class="tab subsection --equipment" data-group="category-tabs" data-tab="equipment">
-            <h3>Equipment</h3>
+            <h3>{{localize 'SWADEItemTables.Equipment'}}</h3>
             {{> 'modules/swade-item-tables/templates/partials/subtabs.hbs'}}
             <section class="tab" data-group="subcategory-tabs" data-tab="gear">
-                <h4>Gear</h4>
+                <h4>{{localize 'SWADEItemTables.Gear'}}</h4>
                 {{#each gear}}
                 {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='gear'}}
                 {{/each}}
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="armor">
-                <h4>Armor</h4>
+                <h4>{{localize 'SWADE.Armor'}}</h4>
                 {{#each armor}}
                 {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='armor'}}
                 {{/each}}
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="shields">
-                <h4>Shields</h4>
+                <h4>{{localize 'SWADE.Shields'}}</h4>
                 {{#each shields}}
                 {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='shields'}}
                 {{/each}}
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="melee-weapons">
-                <h4>Melee Weapons</h4>
+                <h4>{{localize 'SWADE.MeleeWeapons'}}</h4>
                 {{#each melee-weapons}}
                 {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='melee-weapons'}}
                 {{/each}}
             </section>
             <section class="tab" data-group="subcategory-tabs" data-tab="ranged-weapons">
-                <h4>Ranged Weapons</h4>
+                <h4>{{localize 'SWADE.RangedWeapons'}}</h4>
                 {{#each ranged-weapons}}
                 {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='ranged-weapons'}}
                 {{/each}}
             </section>        </section>
         <section class="tab" data-group="category-tabs" data-tab="powers">
-            <h3>Powers</h3>
+            <h3>{{localize 'SWADEItemTables.Powers'}}</h3>
             {{#each powers}}
             {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='powers'}}
             {{/each}}
         </section>
         <section class="tab" data-group="category-tabs" data-tab="abilities">
-            <h3>Abilities</h3>
+            <h3>{{localize 'SWADEItemTables.Abilities'}}</h3>
             {{#each abilities}}
             {{> 'modules/swade-item-tables/templates/partials/items-by-source.hbs' this=this includedItemUuids=../includedItemUuids type='abilities'}}
             {{/each}}

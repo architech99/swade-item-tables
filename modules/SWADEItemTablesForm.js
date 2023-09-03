@@ -20,7 +20,7 @@ export class SWADEItemTablesForm extends FormApplication {
                     group: 'category-tabs',
                     navSelector: '.tabs',
                     contentSelector: '.sheet-body',
-                    initial: 'ancestries',
+                    initial: 'hindrances',
                 },
                 {
                     group: 'subcategory-tabs',
@@ -123,19 +123,23 @@ export class SWADEItemTablesForm extends FormApplication {
 
     _processItem(item, category) {
         const pack = game.packs.get(item.pack);
-        let packageTitle = '';
+        const packageType = pack.metadata.packageType;
         const packageName = pack.metadata.packageName;
-
-        if (pack.metadata.packageType === 'system') {
-            packageTitle = `${game.system.title} system`;
-        } else {
+        let itemsCategory = this._includedItems[category];
+        let packageTitle = '';
+        if (packageType === 'system') {
+            packageTitle = game.system.title;
+        } else if (packageType === 'module') {
             packageTitle = game.modules.find(m => m.id === packageName).title;
+        } else if (packageType === 'world') {
+            packageTitle = game.world.title;
         }
 
         if (!this._includedItems[category]) {
             this._includedItems[category] = [{
-                title: packageTitle,
                 id: packageName,
+                title: packageTitle,
+                packageType: packageType,
                 items: [item]
             }];
         } else {
@@ -145,8 +149,9 @@ export class SWADEItemTablesForm extends FormApplication {
                 this._sortArray(includedPackage.items, 'name');
             } else {
                 this._includedItems[category].push({
-                    title: packageTitle,
                     id: packageName,
+                    title: packageTitle,
+                    packageType: packageType,
                     items: [item]
                 })
                 this._sortArray(this._includedItems[category], 'title');

@@ -7,9 +7,7 @@ import { MODULE } from "./swade-item-tables.js";
 export class SWADEAllowedItemsConfiguration extends FormApplication {
     constructor(options) {
         super(options);
-        this._allSwadeItems = {
-            //includedItemUuids: game.settings.get(MODULE.id, 'included-item-uuids')
-        };
+        this._allSwadeItems = {};
     }
 
     /** @override */
@@ -50,7 +48,7 @@ export class SWADEAllowedItemsConfiguration extends FormApplication {
     /** @override */
     async getData(options = {}) {
         // Get all Item Packs made for SWADE
-        const itemPacks = game.packs.filter(p => p.metadata.type === "Item" && p.metadata.system === "swade");
+        const itemPacks = game.packs.filter(p => p.metadata.type === "Item");
         // Loop through all filtered itemPacks
         for (const pack of itemPacks) {
             // Get all Items from the pack.
@@ -95,8 +93,7 @@ export class SWADEAllowedItemsConfiguration extends FormApplication {
                 }
             }
         }
-        const includedItemUuids = game.settings.get(MODULE.id, 'included-item-uuids');
-        this._allSwadeItems.includedItemUuids = includedItemUuids;
+        this._allSwadeItems.includedItemUuids = game.settings.get(MODULE.id, 'included-item-uuids');
         return foundry.utils.mergeObject(await super.getData(options), this._allSwadeItems);
     }
 
@@ -177,45 +174,51 @@ export class SWADEAllowedItemsConfiguration extends FormApplication {
     _processItem(item, category) {
         const pack = game.packs.get(item.pack);
         const omitSystemItems = game.settings.get(MODULE.id, 'omit-system-items');
-        const isSystemItem = pack.metadata.packageType === 'system';
-        if (isSystemItem && omitSystemItems) return;
-        let packageTitle = '';
+        const packageType = pack.metadata.packageType;
         const packageName = pack.metadata.packageName;
-        if (isSystemItem) {
-            packageTitle = `${game.system.title} system`;
-        } else {
+        let packageTitle = '';
+        if (omitSystemItems && packageType === 'system') return;
+        if (packageType === 'system') {
+            packageTitle = game.system.title;
+        } else if (packageType === 'module') {
             packageTitle = game.modules.find(m => m.id === packageName).title;
+        } else if (packageType === 'world') {
+            packageTitle = game.world.title;
         }
 
-        const packageCategory = this._allSwadeItems[category];
-        if (packageCategory) {
-            const sourcePackage = packageCategory.find(p => p.id === packageName);
+        const indexEntry = pack.index.find(e => e.uuid === item.uuid);
+
+        let itemsCategory = this._allSwadeItems[category];
+        if (itemsCategory) {
+            const sourcePackage = itemsCategory.find(p => p.id === packageName);
             if (sourcePackage) {
-                sourcePackage.items.push(item);
+                sourcePackage.items.push(indexEntry);
                 this._sortArray(sourcePackage.items, 'name');
             } else {
-                packageCategory.push({
-                    title: packageTitle,
+                itemsCategory.push({
                     id: packageName,
-                    items: [item],
+                    title: packageTitle,
+                    packageType: packageType,
+                    items: [indexEntry],
                 });
-                this._allChecked(packageCategory, packageName);
+                this._allChecked(itemsCategory, packageName);
             }
         } else {
-            const newPackageCategory = this._allSwadeItems[category] = [];
-            newPackageCategory.push({
-                title: packageTitle,
+            itemsCategory = this._allSwadeItems[category] = [];
+            itemsCategory.push({
                 id: packageName,
-                items: [item],
+                title: packageTitle,
+                packageType: packageType,
+                items: [indexEntry],
             });
-            this._allChecked(newPackageCategory, packageName);
-            this._sortArray(newPackageCategory, 'title');
+            this._allChecked(itemsCategory, packageName);
+            this._sortArray(itemsCategory, 'title');
         }
     }
 
-    _allChecked(packageCategory, packageName) {
+    _allChecked(itemsCategory, packageName) {
         const includedItemUuids = game.settings.get(MODULE.id, 'included-item-uuids');
-        const sourcePackage = packageCategory.find(p => p.id === packageName);
+        const sourcePackage = itemsCategory.find(p => p.id === packageName);
         const some = sourcePackage.items.some(i => includedItemUuids.includes(i.uuid));
         const all = sourcePackage.items.every(i => includedItemUuids.includes(i.uuid));
         if (all) {

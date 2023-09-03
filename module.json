@@ -18,9 +18,8 @@
   "authors": [
     {
       "name": "Kristian Serrano",
-      "discord": "KristianSerrano",
       "url": "https://immaterialplane.com",
-      "flags": {}
+      "discord": "KristianSerrano"
     }
   ],
   "esmodules": [
@@ -33,19 +32,52 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     }
   ],
   "flags": {
     "hotReload": {
       "extensions": [
         "css",
-        "json"
+        "json",
+        "hbs"
       ],
       "paths": [
         "swade-item-tables.css",
-        "lang/en.json"
+        "lang/en.json",
+        "templates/swade-item-tables.hbs",
+        "templates/allowed-items-configuration.hbs",
+        "templates/partials/tabs.hbs",
+        "templates/partials/subtabs.hbs",
+        "templates/partials/items-by-source.hbs",
+        "templates/partials/allowed-items-by-source.hbs",
+        "templates/partials/table-subheading.hbs"
       ]
     }
-  }
+  },
+  "packs": [
+    {
+      "name": "swade-item-tables-macro",
+      "label": "SWADE Item Tables Macro",
+      "path": "packs/swade-item-tables-macro",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "swade"
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "SWADE Item Tables",
+      "sorting": "m",
+      "color": "#7C6840",
+      "packs": [
+        "swade-item-tables-macro"
+      ],
+      "folders": []
+    }
+  ]
 }
