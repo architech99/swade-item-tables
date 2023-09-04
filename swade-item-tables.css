@@ -21,6 +21,7 @@
 .swade-item-tables .pretext {
     padding: 7px;
 }
+
 .swade-item-tables .tab :is(h3, h4) {
     font-size: 1.5em;
     text-align: center;
@@ -29,12 +30,7 @@
 
 .swade-item-tables legend {
     padding-inline: 0 0;
-    font-size: 150%;
-}
-
-.swade-item-tables table {
-    table-layout: fixed;
-    width: 100%;
+    font-size: 120%;
 }
 
 .swade-item-tables table caption {
@@ -81,14 +77,14 @@
     width: 20%;
 }
 
-.swade-item-tables td:not(:first-child, .notes) {
-    text-align: center;
-}
-
 .swade-item-tables .notes * {
     font-family: inherit;
     font-size: var(--font-size-12);
     color: var(--color-text-dark-secondary);
+}
+
+.swade-item-tables td:not(:first-child, .notes) {
+    text-align: center;
 }
 
 .swade-item-tables .notes:not(:first-child) {
