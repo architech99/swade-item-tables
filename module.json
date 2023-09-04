@@ -65,6 +65,17 @@
       "label": "SWADE Item Tables Macro",
       "path": "packs/swade-item-tables-macro",
       "type": "Macro",
+      "system": "swade",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "swade-item-tables-docs",
+      "label": "SWADE Item Tables Docs",
+      "path": "packs/swade-item-tables-docs",
+      "type": "JournalEntry",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -76,9 +87,10 @@
     {
       "name": "SWADE Item Tables",
       "sorting": "m",
-      "color": "#7C6840",
+      "color": "#671412",
       "packs": [
-        "swade-item-tables-macro"
+        "swade-item-tables-macro",
+        "swade-item-tables-docs"
       ],
       "folders": []
     }
