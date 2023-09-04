@@ -23,10 +23,10 @@ along with this program. If not, see
     {{log colspan}}
     <th colspan="{{colspan}}">
         <span class="table-subheading">
+        {{title}}
         {{#if (eq packageType 'system')}}<i class="far fa-dice" data-tooltip="{{localize 'PACKAGE.Type.system'}}"></i>{{/if}}
         {{#if (eq packageType 'module')}}<i class="fas fa-cube" data-tooltip="{{localize 'PACKAGE.Type.module'}}"></i>{{/if}}
         {{#if (eq packageType 'world')}}<i class="fas fa-globe" data-tooltip="{{localize 'PACKAGE.Type.world'}}"></i>{{/if}}
-        {{title}}
         </span>
     </th>
 </tr>
